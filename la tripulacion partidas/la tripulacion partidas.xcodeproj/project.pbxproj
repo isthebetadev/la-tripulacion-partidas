@@ -51,6 +51,9 @@
 		456657142BE15006003A6249 /* la tripulacion partidas */ = {
 			isa = PBXGroup;
 			children = (
+				456657262BE15910003A6249 /* viewmodel */,
+				456657252BE1590A003A6249 /* model */,
+				456657242BE15903003A6249 /* view */,
 				456657152BE15006003A6249 /* la_tripulacion_partidasApp.swift */,
 				456657172BE15006003A6249 /* ContentView.swift */,
 				456657192BE15008003A6249 /* Assets.xcassets */,
@@ -65,6 +68,27 @@
 				4566571C2BE15008003A6249 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		456657242BE15903003A6249 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		456657252BE1590A003A6249 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		456657262BE15910003A6249 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
