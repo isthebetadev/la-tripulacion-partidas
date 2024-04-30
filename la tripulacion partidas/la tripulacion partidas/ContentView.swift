@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var goToHome: Bool = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -32,7 +35,7 @@ struct ContentView: View {
                         .bold()
                         .foregroundStyle(.white)
                     
-                    Button(action: {}, label: {
+                    Button(action: { goToHome = true }, label: {
                         Text("Comenzar 🚀")
                             .foregroundStyle(.white)
                             .frame(maxWidth: 125, alignment: .center)
@@ -45,6 +48,7 @@ struct ContentView: View {
                                     .shadow(color: .white, radius: 3)
                             )
                     })
+                    .navigationDestination(isPresented: $goToHome, destination: { Home() })
                     
                 }
                 
