@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct Game {
+    let id: Int
+    var name: String
+    var players: [String]
+    var missions: [Mission]
+    
+}
+
+struct Mission {
+    let missionNumber: Int
+    var completed: Bool = false
+}
+
