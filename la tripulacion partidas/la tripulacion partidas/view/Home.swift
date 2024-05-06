@@ -31,10 +31,10 @@ struct Home: View {
                 ToolbarItemGroup(placement: .primaryAction) {
                     
                     // A vista crear partida con formulario
-                    Button(action: { print("to add game view form") }, label: {
+                    Button(action: { toAddGameForm() }, label: {
                         Image(systemName: "plus.circle")
                     })
-                    .navigationDestination(isPresented: $showNewGameView, destination: { AddGame() })
+                    .navigationDestination(isPresented: $showNewGameView, destination: { AddGame(id: 0, name: "", players: [""], missions: [Mission(missionNumber: 0)]) })
                     
                     Button(action: { showHelpPopover() }, label: {
                         Image(systemName: "questionmark.circle")
@@ -92,6 +92,11 @@ struct Home: View {
     func hideHelpPopover() {
         print("hide help info")
         showHelp = false
+    }
+    
+    func toAddGameForm() {
+        print("to add game view form")
+        showNewGameView = true
     }
     
 }
