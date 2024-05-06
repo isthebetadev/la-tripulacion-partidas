@@ -34,7 +34,9 @@ struct Home: View {
                     Button(action: { toAddGameForm() }, label: {
                         Image(systemName: "plus.circle")
                     })
-                    .navigationDestination(isPresented: $showNewGameView, destination: { AddGame(id: 0, name: "", players: [""], missions: [Mission(missionNumber: 0)]) })
+                    .navigationDestination(
+                        isPresented: $showNewGameView,
+                        destination: { AddGame() })
                     
                     Button(action: { showHelpPopover() }, label: {
                         Image(systemName: "questionmark.circle")
