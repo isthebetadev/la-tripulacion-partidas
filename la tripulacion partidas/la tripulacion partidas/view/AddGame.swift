@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddGame: View {
     
+    @State var toHomePage: Bool = false
     @State var id: Int
     @State var player: String
     @State var name: String
@@ -69,6 +70,7 @@ struct AddGame: View {
                         Label("Guardar partida", systemImage: "externaldrive.fill.badge.plus")
                             .foregroundStyle(.myBackground)
                     }
+                    .navigationDestination(isPresented: $toHomePage, destination: { Home() })
                 }
                 
             }
@@ -79,12 +81,20 @@ struct AddGame: View {
     }
     
     func saveGameData() {
+        let dataManager = GameDataManager()
         // TODO call to viewmodel manager for get the last id and initialize this id with last+1
+        id = dataManager.generateNextId()
         // TODO create the Game model with the 50 missions
         fillMissionList()
         var gameToSave: Game = Game(id: id, name: name, players: players, missions: missions)
         // TODO call to viewmodel manager for save the game
         print("Saving game..")
+        var result = dataManager.saveGame(gameToSave)
+        if result {
+            print("Back to home page")
+            toHomePage = true
+        }
+        
     }
     
     func fillMissionList() {
